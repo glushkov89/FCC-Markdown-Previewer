@@ -1,7 +1,9 @@
 textarea, #preview {
   margin: 0 0;
   width: 40vw;
-  background-color: #ecff7f;
+  background-color: #021c1e;
+  color: #6fb98f;
+  border-radius: 6px;
 }
 
 body {
@@ -14,6 +16,10 @@ body {
           flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-align: stretch !important;
+      -ms-flex-align: stretch !important;
+          align-items: stretch !important;
+  background-color: #90afc5;
 }
 
 textarea {
@@ -28,5 +34,12 @@ textarea {
 pre {
   margin: 0 0;
   padding: 0 0;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */

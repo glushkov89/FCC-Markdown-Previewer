@@ -1,8 +1,7 @@
 const appMod = (function() {
 	const ids = {
 		preview: "#preview",
-		editor: "#editor",
-		clear: "#clear-editor"
+		editor: "#editor"
 	};
 
 	var myMarked = require("marked");
@@ -20,12 +19,7 @@ const appMod = (function() {
 		convertText: function() {
 			$(ids.preview).html(myMarked($(ids.editor).val(), myMarkedSettings));
 		},
-		clearEditor: function() {
-			$(ids.editor).val("");
-			$(ids.preview).text("");
-		},
 		attachEventHandlers: function() {
-			$(ids.clear).click(this.clearEditor);
 			$(ids.editor).on("input", this.convertText);
 		}
 	};
