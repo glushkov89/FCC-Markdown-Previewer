@@ -1538,12 +1538,10 @@ const appMod = (function() {
 	return {
 		convertText: function() {
 			$(ids.preview).html(myMarked($(ids.editor).val(), myMarkedSettings));
-			console.log("Converted");
 		},
 		clearEditor: function() {
 			$(ids.editor).val("");
 			$(ids.preview).text("");
-			console.log("Clear");
 		},
 		attachEventHandlers: function() {
 			$(ids.clear).click(this.clearEditor);
@@ -1553,17 +1551,8 @@ const appMod = (function() {
 })();
 
 $(document).ready(() => {
-	console.log("Document ready");
 	appMod.convertText();
 	appMod.attachEventHandlers();
-
-	// $("#clear-editor").click(appMod.clearEditor);
-	// $("#editor").on("input", appMod.convertText);
-	// const ids = appMod.getIds();
-	// $(ids.clear).click(appMod.clearEditor);
-	// appMod.convertText();
-
-	// console.log("Mrkdwn finished");
 });
 
 },{"marked":1}]},{},[2]);
