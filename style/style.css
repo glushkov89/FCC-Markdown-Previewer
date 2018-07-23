@@ -1,0 +1,32 @@
+textarea, #preview {
+  margin: 0 0;
+  width: 40vw;
+  background-color: #ecff7f;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+textarea {
+  height: 90vh;
+}
+
+#preview {
+  height: auto;
+}
+
+.editor-container,
+pre {
+  margin: 0 0;
+  padding: 0 0;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,28 @@
+%textarea-shared {
+	margin: 0 0;
+	width: 40vw;
+	background-color: rgb(236, 255, 127);
+}
+
+body {
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+textarea {
+	@extend %textarea-shared;
+	height: 90vh;
+}
+
+#preview {
+	@extend %textarea-shared;
+	height: auto;
+}
+
+.editor-container,
+pre {
+	margin: 0 0;
+	padding: 0 0;
+}

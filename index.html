@@ -1,3 +1,27 @@
+<!--User Story #1: I can see a textarea element with a corresponding id="editor".
+User Story #2: I can see an element with a corresponding id="preview".
+User Story #3:  When I enter text into the #editor element, the #preview element 
+                is updated as I type to display the content of the textarea.
+User Story #4:  When I enter GitHub flavored markdown into the #editor element, 
+                the text is rendered as HTML in the #preview element as I type 
+                (HINT: You don't need to parse Markdown yourself - you can import 
+                the Marked library for this: https://cdnjs.com/libraries/marked).
+User Story #5:  When my markdown previewer first loads, the default text in the #editor 
+                field should contain valid markdown that represents at least one of each 
+                of the following elements: a header (H1 size), a sub header (H2 size), a 
+                link, inline code, a code block, a list item, a blockquote, an image, and bolded text.
+User Story #6: When my markdown previewer first loads, the default markdown in the #editor field should 
+                be rendered as HTML in the #preview element.
+Optional Bonus  (you do not need to make this test pass): 
+                When I click a link rendered by my markdown previewer, the link is opened up in a new tab 
+                (HINT: read the Marked.js docs for this one!).
+Optional Bonus  (you do not need to make this test pass): My markdown previewer interprets carriage returns 
+                and renders them as br (line break) elements.
+You can build your project by forking this CodePen pen. 
+Or you can use this CDN link to run the tests in any environment you like: 
+https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js-->
+
+
 <!DOCTYPE html>
 <html>
 
@@ -6,11 +30,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>FCC-Markdown-Previewer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="" />
-    <script src="https://gitcdn.link/repo/freeCodeCamp/testable-projects-fcc/master/build/bundle.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="./style/style.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.4.0/marked.js"></script>
+    <script src="./script/app.js"></script>
 </head>
 
 <body>
+    <div class='editor-container'>
+        <pre><textarea id="editor">        
+# Welcome to my React Markdown Previewer!
+
+## This is a sub-heading...
+### And here's some other cool stuff:
+          
+Heres some code, `<div></div>`, between 2 backticks.
+        
+```
+// this is multi-line code:
+        
+function anotherExample(firstLine, lastLine) {
+if (firstLine == '```' && lastLine == '```') {
+return multiLineCode;
+}
+}
+```
+          
+You can also make text **bold**... whoa!
+Or _italic_.
+Or... wait for it... **_both!_**
+And feel free to go crazy ~~crossing stuff out~~.
+        
+There's also [links](https://www.freecodecamp.com), and
+> Block Quotes!
+        
+And if you want to get really crazy, even tables:
+        
+Wild Header | Crazy Header | Another Header?
+------------ | ------------- | ------------- 
+Your content can | be here, and it | can be here....
+And here. | Okay. | I think we get it.
+        
+- And of course there are lists.
+- Some are bulleted.
+- With different indentation levels.
+- That look like this.
+        
+        
+1. And there are numbererd lists too.
+1. Use just 1s if you want! 
+1. But the list goes on...
+- Even if you use dashes or asterisks.
+* And last but not least, let's not forget embedded images:
+        
+![React Logo w/ Text](https://goo.gl/Umyytc)
+</textarea></pre>
+        <button id='clear-editor'>Clear Editor</button>
+    </div>
+
+    <div id="preview"></div>
 
 </body>
 
