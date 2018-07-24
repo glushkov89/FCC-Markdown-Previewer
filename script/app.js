@@ -4,8 +4,8 @@ const appMod = (function() {
 		editor: "#editor"
 	};
 
-	var myMarked = require("marked");
-	var newRenderer = new myMarked.Renderer();
+	const myMarked = require("marked");
+	let newRenderer = new myMarked.Renderer();
 	newRenderer.link = function(href, title, text) {
 		return `<a title=${title} href="${href}" target="_blank">${text}</a>`;
 	};
@@ -15,17 +15,24 @@ const appMod = (function() {
 		breaks: true,
 		renderer: newRenderer
 	};
+
+	const autosize = require("autosize");
+
 	return {
 		convertText: function() {
 			$(ids.preview).html(myMarked($(ids.editor).val(), myMarkedSettings));
 		},
 		attachEventHandlers: function() {
 			$(ids.editor).on("input", this.convertText);
+		},
+		enableAutosize: function() {
+			autosize($(ids.editor));
 		}
 	};
 })();
 
 $(document).ready(() => {
+	appMod.enableAutosize();
 	appMod.convertText();
 	appMod.attachEventHandlers();
 });
