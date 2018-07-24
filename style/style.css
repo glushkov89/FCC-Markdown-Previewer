@@ -1,12 +1,42 @@
 #editor, #preview {
-  margin: 20px 10px;
-  padding: 5% 5%;
+  margin: 3vh 2vw 3vh 2vw;
+  padding: 3% 5%;
   width: 30vw;
   height: auto;
+  font-size: 0.8vw;
   background-color: #021c1e;
+  border: 2px solid;
   border-radius: 6px;
   -webkit-box-shadow: 4px 8px 12px 0 #021c1e;
           box-shadow: 4px 8px 12px 0 #021c1e;
+}
+
+@media only screen and (orientation: portrait) {
+  main {
+    display: inline !important;
+  }
+  #editor,
+  #preview {
+    width: 60vw;
+    font-size: 2vh;
+  }
+  .preview-container {
+    display: inline !important;
+    position: absolute;
+    top: 5vh;
+    left: 20vw;
+  }
+  .editor-container {
+    position: absolute;
+    top: 3vh;
+    display: inline !important;
+  }
+  .fa {
+    font-size: 5vh !important;
+  }
+  .down {
+    z-index: -10;
+  }
 }
 
 body {
@@ -74,18 +104,18 @@ a:visited {
 }
 
 #editor {
-  font-size: 1.5vh;
+  border-color: #6fb98f;
   color: #6fb98f;
 }
 
 #preview {
-  font-size: 1.5vh;
   font-family: "Nunito", sans-serif;
   color: #f4cc70;
+  border-color: #f4cc70;
 }
 
 #preview img {
-  width: 90%;
+  max-width: 90%;
   height: auto;
 }
 
@@ -96,7 +126,7 @@ pre {
 }
 
 .fa {
-  font-size: 3vh;
+  font-size: 3vw;
   color: #021c1e;
 }
 /*# sourceMappingURL=style.css.map */

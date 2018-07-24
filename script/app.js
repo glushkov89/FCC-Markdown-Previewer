@@ -24,6 +24,9 @@ const appMod = (function() {
 		},
 		attachEventHandlers: function() {
 			$(ids.editor).on("input", this.convertText);
+			$(ids.preview).on("click", () => {
+				$(ids.preview).toggleClass("down");
+			});
 		},
 		enableAutosize: function() {
 			autosize($(ids.editor));
